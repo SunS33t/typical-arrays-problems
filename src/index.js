@@ -1,9 +1,7 @@
-let maixmum = Number.MIN_SAFE_INTEGER;
-let minimum = Number.MAX_SAFE_INTEGER;
-
 exports.min= function min (array) {
-  if(array.length == 0) return 0;
-  
+
+  if(!array || array.length == 0) {return 0;}
+  let minimum = Number.MAX_SAFE_INTEGER;
   array.forEach(element => {
     if(element <= minimum){
       minimum = element;
@@ -13,7 +11,8 @@ exports.min= function min (array) {
 }
 
 exports.max= function max (array) {
- if(array.length == 0) return 0;
+  if(!array || array.length == 0) {return 0;}
+  let maixmum = Number.MIN_SAFE_INTEGER;
  array.forEach(element => {
    if(element >= maixmum){
      maixmum = element;
@@ -25,7 +24,7 @@ exports.max= function max (array) {
 
 
 exports.avg = function avg (array) {
-  if(array.length == 0) return 0;
+  if(!array || array.length == 0) {return 0;}
   let sum = 0;
   array.forEach(element => {
     sum+=element;
